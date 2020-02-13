@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- # CODE 6: For importing values from properties file -->
+	<context:property-placeholder location="classpath:sport.properties"/>
+	
+    <!-- Define your beans here -->
+    
+    <!-- Define the dependency -->
+    
+    <bean id="fs" class="com.vs.springdemo.HappyFortuneService"></bean>
+    
+    <bean id="coach" class="com.vs.springdemo.BaseballCoach">
+    	<!-- Set up constructor injection -->
+    	<constructor-arg ref="fs"/>
+    </bean>
+    
+    <bean id="myCricketCoach" class="com.vs.springdemo.CricketCoach">
+    	<!-- Set up setter injection -->
+    	<property name="fortuneService" ref="fs"/>
+    	
+    	<!-- # CODE 5: Setter Literal Value Dependency Injection -->
+    	<property name="emailAddress" value="thebestcoach@vs.com" />
+		<property name="team" value="Sunrisers Hyderabad" />
+    </bean>
+    
+    <!-- # CODE 6 -->
+    <bean id="myNewCricketCoach" class="com.vs.springdemo.CricketCoach">
+    	<!-- Set up setter injection -->
+    	<property name="fortuneService" ref="fs"/>
+    	
+    	<!-- # CODE 6: Setter Literal Value Dependency Injection from properties file -->
+    	<property name="emailAddress" value="${foo.email}" />
+		<property name="team" value="${foo.team}" />
+    </bean>
+</beans>
