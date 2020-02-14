@@ -1,0 +1,181 @@
+Inversion of Control (IoC): The approach of outsourcing the construction and management of objects.
+
+Spring Container > Primary Functions:
+• Create and manage objects (Inversion of Control)
+• Inject object’s dependencies (Dependency Injection)
+
+Configuring Spring Container
+• XML configuration file (legacy, but most legacy apps still use this)
+• Java Annotations (modern)
+• Java Source Code (modern)
+
+Spring Development Process
+1. Configure your Spring Beans
+2. Create a Spring Container
+3. Retrieve Beans from Spring Container
+
+In newer spring versions by default logging is disabled. Refer "HEADS UP" video in IoC section to enable logging.
+
+****************************************************************************************************************************************************************************************************************************************************
+
+Dependency Injection (The dependency inversion principle):
+• The client delegates to calls to another object the responsibility of providing its dependencies.
+• Injecting helper objects.
+
+Injection Types
+• There are many types of injection with Spring
+• We will cover the two most common
+    • Constructor Injection
+    • Setter Injection
+• Will talk about “auto-wiring” in the Annotations section later
+
+Development Process - Constructor Injection
+1. Define the dependency interface and class
+2. Create a constructor in your class for injections
+3. Configure the dependency injection in Spring config file
+
+Development Process - Setter Injection
+1. Create setter method(s) in your class for injections
+2. Configure the dependency injection in Spring config file
+
+Development Process - Properties File
+1. Create Properties File
+2. Load Properties File in Spring config file
+3. Reference values from Properties File
+
+****************************************************************************************************************************************************************************************************************************************************
+
+Bean Scopes
+• Scope refers to the lifecycle of a bean
+• How long does the bean live?
+• How many instances are created?
+• How is the bean shared?
+
+Default Scope: Singleton
+
+What Is a Singleton?
+• Spring Container creates only one instance of the bean, by default
+• It is cached in memory
+• All requests for the bean will return a SHARED reference to the SAME bean
+
+Spring Bean Scopes
+• singleton         : Create a single shared instance of the bean. Default scope.
+• prototype         : Creates a new bean instance for each container request.
+• request           : Scoped to an HTTP web request. Only used for web apps.
+• session           : Scoped to an HTTP web session. Only used for web apps.
+• global-session    : Scoped to a global HTTP web session. Only used for web apps.
+
+Bean Lifecycle
+    # Start:-
+        STEP 1: Container Started
+        STEP 2: Bean Instantiated
+        STEP 3: Dependencies Injected
+        STEP 4: Internal Spring Processing
+        STEP 5: Your Custom Init Method --> USER DEFINED
+        STEP 6: Bean Is Ready For Use
+
+    # Stop:-
+        STEP 1: Your Custom Destroy Method --> USER DEFINED
+        STEP 2: Stop the container
+
+    # Development Process:-
+        STEP 1: Define your methods for init and destroy
+        STEP 2: Configure the method names in Spring config file
+
+    # Special Note about init and destroy Method Signatures:-
+        When using XML configuration; the additional details regarding the method signatures of the init-method  and destroy-method are as follows.
+
+        • Access modifier:
+            > The method can have any access modifier (public, protected, private).
+        • Return type:
+            > The method can have any return type.
+            > However, "void' is most commonly used.
+            > If you give a return type just note that you will not be able to capture the return value.
+            > As a result, "void" is commonly used.
+        • Method name:
+            > The method can have any method name.
+        • Arguments:
+            > The method can not accept any arguments.
+            > The method should be no-arg.
+
+    # Special Note about Destroy Lifecycle and Prototype Scope:-
+        There is a subtle point you need to be aware of with "prototype" scoped beans.
+
+        • For "prototype" scoped beans, Spring does not call the destroy method.
+        • In contrast to the other scopes, Spring does not manage the complete lifecycle of a prototype bean:
+          the container instantiates, configures, and otherwise assembles a prototype object, and hands it to the client,
+          with no further record of that prototype instance.
+        • Thus, although initialization lifecycle callback methods are called on all objects regardless of scope,
+          in the case of prototypes, configured destruction lifecycle callbacks are not called.
+          The client code must clean up prototype-scoped objects and release expensive resources that the prototype bean(s) are holding. 
+        • This also applies to both XML configuration and Annotation-based configuration.
+
+****************************************************************************************************************************************************************************************************************************************************
+
+What are Java Annotations?
+• Special labels/markers added to Java classes
+• Provides meta-data about the class
+• Processed at compile time or run-time for special processing
+
+Why Spring Configuration with Annotations?
+• XML configuration can be verbose
+• Configure your Spring beans with Annotations
+• Annotations minimizes the XML configuration
+
+Scanning for Component Classes
+• Spring will scan your Java classes for special annotations
+• Automatically register the beans in the Spring container
+
+Development Process
+1. Enable component scanning in Spring config file
+2. Add the @Component Annotation to your Java classes
+3. Retrieve bean from Spring container
+
+Spring also supports Default Bean IDs
+• Though we can give a bean any ID of our liking but default ID is generally used 
+• Default bean id: the class name, make first letter lower-case
+• Example: TennisCoach (Class Name) => tennisCoach (Default Bean Id)
+
+****************************************************************************************************************************************************************************************************************************************************
+
+What is Spring AutoWiring?
+• For dependency injection, Spring can use auto wiring
+• Spring will look for a class that matches the property
+• Matches by type: class or interface
+• Spring will inject it automatically … hence it is autowired
+
+Autowiring Injection Types
+• Constructor Injection
+• Setter Injection
+• Field Injections
+
+Development Process - Constructor Injection
+1. Define the dependency interface and class
+2. Create a constructor in your class for injections
+3. Configure the dependency injection with @Autowired Annotation
+
+What if there are multiple FortuneService(Autowired Object) implementations?
+Spring has special support to handle this case. Use the @Qualifier annotation.
+
+Autowired - (Refer: "BaseballCoach" class in the third project.)
+• As of Spring Framework 4.3, an @Autowired annotation on such a constructor is
+  no longer necessary if the target bean only defines one constructor to begin with.
+  However, if several constructors are available, at least one must be annotated to
+  teach the container which one to use.
+• I personally prefer to use the @Autowired annotation because it makes the code more
+  readable. But as mentioned, the @Autowired is not required for this scenario.
+
+Development Process - Setter Injection
+1. Create setter method(s) in your class for injections
+2. Configure the dependency injection with @Autowired Annotation
+
+Development Process - Method Injection
+1. Create method(s) in your class for injections
+2. Configure the dependency injection with @Autowired Annotation
+
+Field Injection - Inject dependencies by setting field values on your class directly (even private fields). Accomplished by using Java Reflection.
+
+Development Process - Field Injection
+1. Configure the dependency injection with Autowired Annotation
+    ✤ Applied directly to the field
+    ✤ No need for setter methods
