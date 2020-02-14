@@ -1,6 +1,6 @@
-# CODE 1: Java way of using objects. 												--> MyApp
-# CODE 2: Spring way of configuring objects and using them. 						--> HelloSpringApp
-# CODE 3: IoC with Constructor Dependency Injection. 								--> DependencyInjectionApp
-# CODE 4: IoC with Setter Dependency Injection. 									--> SetterDependencyInjection
-# CODE 5: IoC with Setter Literal Value Dependency Injection.						--> SetterLiteralValueDependencyInjection
-# CODE 6: IoC with Setter Literal Value Dependency Injection from properties file.	--> SetterDIUsingPropertiesFile
+CODE 1: Java way of using objects. (MyApp)
+CODE 2: Spring way of configuring objects and using them. (HelloSpringApp)
+CODE 3: IoC with Constructor Dependency Injection. (DependencyInjectionApp)
+CODE 4: IoC with Setter Dependency Injection. (SetterDependencyInjection)
+CODE 5: IoC with Setter Literal Value Dependency Injection. (SetterLiteralValueDependencyInjection)
+CODE 6: IoC with Setter Literal Value Dependency Injection from properties file. (SetterDIUsingPropertiesFile)
