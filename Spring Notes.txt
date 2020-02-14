@@ -1,3 +1,7 @@
+Download the jars from: https://repo.spring.io/release/org/springframework/spring/
+
+****************************************************************************************************************************************************************************************************************************************************
+
 Inversion of Control (IoC): The approach of outsourcing the construction and management of objects.
 
 Spring Container > Primary Functions:
