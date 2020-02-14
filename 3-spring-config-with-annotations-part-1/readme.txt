@@ -1,0 +1,6 @@
+1) AnnotationDemoApp: User defined ID for a component. (TennisCoach)
+2) AnnotationDefaultIDDemoApp: Default ID for a component. (CricketCoach)
+3) AnnotationConstructorDependencyInjection: Constructor dependency injection using annotations. (BaseballCoach)
+4) AnnotationSetterDependencyInjection: Setter dependency injection using annotations. (TrackCoach)
+5) AnnotationMethodDependencyInjection: Method dependency injection using annotations. (BadmintonCoach)
+6) AnnotationFieldDependencyInjection: Field dependency injection using annotations. (KabbadiCoach)
