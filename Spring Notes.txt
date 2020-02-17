@@ -339,3 +339,14 @@ Special Note about Destroy Lifecycle and Prototype Scope
         The custom bean processing is handled in the MyCustomBeanProcessor class.
 
         See source code in the project named: 3-spring-config-with-annotations-part-3
+
+****************************************************************************************************************************************************************************************************************************************************
+
+Java Configuration
+    • Instead of configuring Spring container using XML
+    • Configure the Spring container with Java code
+
+3 Ways of Configuring Spring Container
+    1. Full XML Config (Project number 1 & 2)
+    2. XML Component Scan (Project number 3 - all 3 parts)
+    3. Java Configuration Class
