@@ -5,3 +5,9 @@
 	(a) Dependency Injection using properties file and annotations.
 	(b) Read the "SwimCoach.java" file for more details.
 	(c) Read the changes in the "applicationContextPF.xml".
+3) AnnotationBeanScopeDemoApp:
+	(a) Defining bean scopes using annotations.
+	(b) Read the "CricketCoach.java" file for more details.
+4) AnnotationBeanLifeCycle:
+	(a) Defining bean life cycle methods.
+	(b) Read the "TrackCoach.java" file for more details.
