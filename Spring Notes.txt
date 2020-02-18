@@ -18,7 +18,7 @@ Spring Development Process
 2. Create a Spring Container
 3. Retrieve Beans from Spring Container
 
-In newer spring versions by default logging is disabled. Refer "HEADS UP" video in IoC section to enable logging.
+In newer spring versions by default logging is disabled. Refer "HEADS UP" video in IoC section to enable logging. (Video number: 25)
 
 ****************************************************************************************************************************************************************************************************************************************************
 
@@ -349,4 +349,72 @@ Java Configuration
 3 Ways of Configuring Spring Container
     1. Full XML Config (Project number 1 & 2)
     2. XML Component Scan (Project number 3 - all 3 parts)
-    3. Java Configuration Class
+    3. Java Configuration Class (Project number 4)
+
+Development Process - Java Configuration Class
+    1. Create a Java class and annotate as @Configuration
+    2. Add component scanning support: @ComponentScan (optional)
+    3. Read Spring Java configuration class
+    4. Retrieve bean from Spring container
+
+In newer spring versions by default logging is disabled. Refer "HEADS UP" video (Video number: 86) OR refer forked gist on GitHub.
+
+Development Process - Defining Bean - Java Configuration Class
+    1. Define method to expose bean
+    2. Inject bean dependencies
+    3. Read Spring Java configuration class
+    4. Retrieve bean from Spring container
+
+Development Process - Properties File - Java Configuration Class
+    1. Create Properties File
+    2. Load Properties File in Spring config
+    3. Reference values from Properties File
+
+****************************************************************************************************************************************************************************************************************************************************
+
+What is Spring MVC?
+    • Framework for building web applications in Java
+    • Based on Model-View-Controller design pattern
+    • Leverages features of the Core Spring Framework (IoC, DI)
+
+Spring MVC Benefits
+    • The Spring way of building web app UIs in Java
+    • Leverage a set of reusable UI components
+    • Help manage application state for web requests
+    • Process form data: validation, conversion etc
+    • Flexible configuration for the view layer
+
+Components of a Spring MVC Application
+    • A set of web pages to layout UI components
+    • A collection of Spring beans (controllers, services, etc…)
+    • Spring configuration (XML, Annotations or Java)
+
+Web Browser --> Front Controller --(Model)--> Controller --(Model)--> View Template --> Web Browser
+
+Front Controller:
+    • Front controller known as DispatcherServlet.
+    • Part of the Spring Framework.
+    • Already developed by Spring Dev Team.
+
+Controller:
+    • Code created by developer
+    • Contains your business logic
+        • Handle the request
+        • Store/retrieve data (db, web service…)
+        • Place data in model
+    • Send to appropriate view template
+
+Model:
+    • Contains your data
+    • Store/retrieve data via backend systems
+        • database, web service, etc…
+        • Use a Spring bean if you like
+    • Place your data in the model
+        • Data can be any Java object/collection
+
+View Template:
+    • Spring MVC is flexible
+        • Supports many view templates
+    • Most common is JSP + JSTL
+    • Developer creates a page
+        • Displays data
