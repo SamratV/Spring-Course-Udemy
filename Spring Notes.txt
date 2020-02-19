@@ -418,3 +418,66 @@ View Template:
     • Most common is JSP + JSTL
     • Developer creates a page
         • Displays data
+
+------------------------------------------------------------------------------------------------------------
+|Spring MVC Configuration Process - Part 1                                                                 |
+------------------------------------------------------------------------------------------------------------
+|   Add configurations to file: WEB-INF/web.xml                                                            |
+|        STEP 1: CONFIGURE SPRING DISPATCHER SERVLET                                                       |
+|            <web-app>                                                                                     |
+|                <servlet>                                                                                 |
+|                    <servlet-name>dispatcher</servlet-name>                                               |
+|                    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>      |
+|                    <init-param>                                                                          |
+|                        <param-name>contextConfigLocation</param-name>                                    |
+|                        <param-value>/WEB-INF/spring-mvc-demo-servlet.xml</param-value>                   |
+|                    </init-param>                                                                         |
+|                    <load-on-startup>1</load-on-startup>                                                  |
+|                </servlet>                                                                                |
+|            </web-app>                                                                                    |
+|                                                                                                          |
+|        STEP 2: SET UP URL MAPPINGS TO SPRING MVC DISPATCHER SERVLET                                      |
+|            <web-app>                                                                                     |
+|                <servlet>                                                                                 |
+|                    <servlet-name>dispatcher</servlet-name>                                               |
+|                    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>      |
+|                    ...                                                                                   |
+|                </servlet>                                                                                |
+|                <servlet-mapping>                                                                         |
+|                    <servlet-name>dispatcher</servlet-name>                                               |
+|                    <url-pattern>/</url-pattern>                                                          |
+|               </servlet-mapping>                                                                         |
+|            </web-app>                                                                                    |
+------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------
+|Spring MVC Configuration Process - Part 2                                                                 |
+------------------------------------------------------------------------------------------------------------
+|    Add configurations to file: WEB-INF/spring-mvc-demo-servlet.xml                                       |
+|        STEP 3: ADD SUPPORT FOR SPRING COMPONENT SCANNING                                                 |
+|            <beans>                                                                                       |
+|                <!-- Step 3: Add support for component scanning -->                                       |
+|                <context:component-scan base-package="com.luv2code.springdemo" />                         |
+|            </beans>                                                                                      |
+|                                                                                                          |
+|        STEP 4: ADD SUPPORT FOR CONVERSION, FORMATTING AND VALIDATION                                     |
+|            <beans>                                                                                       |
+|                <!-- Step 3: Add support for component scanning -->                                       |
+|                <context:component-scan base-package="com.luv2code.springdemo" />                         |
+|                <!-- Step 4: Add support for conversion, formatting and validation support -->            |
+|                <mvc:annotation-driven/>                                                                  |
+|            </beans>                                                                                      |
+|                                                                                                          |
+|        STEP 5: CONFIGURE SPRING MVC VIEW RESOLVER                                                        |
+|            <beans>                                                                                       |
+|                <!-- Step 3: Add support for component scanning -->                                       |
+|                <context:component-scan base-package="com.luv2code.springdemo" />                         |
+|                <!-- Step 4: Add support for conversion, formatting and validation support -->            |
+|                <mvc:annotation-driven/>                                                                  |
+|                <!-- Step 5: Define Spring MVC view resolver -->                                          |
+|                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">          |
+|                    <property name="prefix" value="/WEB-INF/view/" />                                     |
+|                    <property name="suffix" value=".jsp" />                                               |
+|                </bean>                                                                                   |
+|            </beans>                                                                                      |
+------------------------------------------------------------------------------------------------------------
