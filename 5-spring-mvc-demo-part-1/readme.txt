@@ -5,6 +5,8 @@ NOTE:
 	number 99: Download Spring MVC Starter Files.
 	
 
-Version 1: HomeController.java, main-menu.jsp
-Version 2: HelloWorldController.java, helloworld-form.jsp, helloworld.jsp
-Version 3: HelloWorldController2.java, helloworld-form-2.jsp, helloworld2.jsp
+Version 1: HomeController.java, main-menu.jsp                                       --> HOME PAGE
+Version 2: HelloWorldController.java, helloworld-form.jsp, helloworld.jsp           --> SIMPLE REDIRECTION
+Version 3: HelloWorldController2.java, helloworld-form-2.jsp, helloworld2.jsp       --> HTTP SERVLET REQUEST AND SPRING MODEL
+Version 4: HelloWorldController3.java, helloworld-form-3.jsp, helloworld3.jsp       --> REQUEST PARAM AND SPRING MODEL
+Version 5: HelloWorldController4.java, helloworld-form-4.jsp, helloworld4.jsp       --> LEVEL MAPPING
