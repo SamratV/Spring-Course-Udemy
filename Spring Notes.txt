@@ -481,3 +481,75 @@ View Template:
 |                </bean>                                                                                   |
 |            </beans>                                                                                      |
 ------------------------------------------------------------------------------------------------------------
+
+Development Process - Spring MVC
+    1. Create Controller class
+
+        @Controller
+        public class HomeController {
+        }
+
+    2. Define Controller method
+
+        @Controller
+        public class HomeController {
+            public String showMyPage() {
+            …
+            }
+        }
+
+    3. Add Request Mapping to Controller method
+        
+        @Controller
+        public class HomeController {
+            @RequestMapping("/")
+            public String showMyPage() {
+            …
+            }
+        }
+
+    4. Return View Name
+
+        @Controller
+        public class HomeController {
+            @RequestMapping("/")
+            public String showMyPage() {
+                return "main-menu";
+            }
+        }
+
+    5. Develop View Page - File: /WEB-INF/view/main-menu.jsp
+
+        <html>
+            <body>
+                <h2>Spring MVC Demo - Home Page</h2>
+            </body>
+        </html>
+
+QUESTION: How do I use CSS, JavaScript and Images in a Spring MVC Web App?
+ANSWER:
+    Here are the steps on how to access static resources in a Spring MVC.
+    For example, you can use this to access images, css, JavaScript files etc.
+    Any static resource is processed as a URL Mapping in Spring MVC. You can
+    configure references to static resources in the spring-mvc-demo-servlet.xml.
+
+    In my example, I'm going to have the following directory structure:
+
+        I chose to put everything in the "resources" directory. But you can use any
+        name for "resources", such as "assets", "foobar" etc. Also, you can give any
+        name that you want for the subdirectories under "resources".
+
+    ---
+
+    Step 1: Add the following entry to your Spring MVC configuration file: spring-mvc-demo-servlet.xml
+        You can place this entry anywhere in your Spring MVC config file.
+        <mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>
+
+        "resources" folder is placed inside "WebContent" folder.
+
+    Step 2: Now in your view pages, you can access the static files using this syntax:
+        <img src="${pageContext.request.contextPath}/resources/images/spring-logo.png">
+        You need to use the JSP expression ${pageContext.request.contextPath} to access
+        the correct root directory for your web application.
+
+    Apply the same technique for reading CSS and JavaScript. In case of doubt refer forked gists on GitHub.
