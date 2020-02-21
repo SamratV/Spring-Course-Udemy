@@ -553,3 +553,34 @@ ANSWER:
         the correct root directory for your web application.
 
     Apply the same technique for reading CSS and JavaScript. In case of doubt refer forked gists on GitHub.
+
+Spring MVC Form Tags
+    • Spring MVC Form Tags are the building block for a web page
+    • Form Tags are configurable and reusable for a web page
+    • Form tags will generate HTML for you
+        • form:form - main form container
+        • form:input - text field
+        • form:textarea - multi-line text field
+        • form:checkbox - check box
+        • form:radiobutton - radio buttons
+        • form:select - drop down list
+        • more …
+
+Data Binding
+    • Spring MVC Form Tags can make use of data binding
+    • Automatically setting / retrieving data from a Java object / bean
+
+How To Reference Spring MVC Form Tags
+    • Specify the Spring namespace at beginning of JSP file
+        <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+Showing Form - In your Spring Controller
+    • Before you show the form, you must add a model attribute
+    • This is a bean that will hold form data for the data binding
+
+Development Process - Spring MVC "form" Tag (Project 5 - Part 3 - Version 1)
+    1. Create Student class
+    2. Create Student controller class
+    3. Create HTML form
+    4. Create form processing code
+    5. Create confirmation page
