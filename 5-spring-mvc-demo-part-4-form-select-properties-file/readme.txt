@@ -1,0 +1,1 @@
+This project shows the method to populate the spring MVC form select tag with values from properties file.
