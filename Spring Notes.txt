@@ -584,3 +584,34 @@ Development Process - Spring MVC "form" Tag (Project 5 - Part 3 - Version 1)
     3. Create HTML form
     4. Create form processing code
     5. Create confirmation page
+
+****************************************************************************************************************************************************************************************************************************************************
+
+Java’s Standard Bean Validation API (Reference: http://www.beanvalidation.org)
+    • Java has a standard Bean Validation API
+    • Defines a metadata model and API for entity validation
+    • Not tied to either the web tier or the persistence tier
+    • Available for server-side apps and also client-side JavaFX/Swing apps
+
+Spring and Validation
+    • Spring version 4 and higher supports Bean Validation API
+    • Preferred method for validation when building Spring apps
+    • Simply add Validation JARs to our project
+
+Bean Validation Features
+    • required
+    • validate length
+    • validate numbers
+    • validate with regular expressions
+    • custom validation
+
+Validation Annotations
+    • @NotNull          : Checks that the annotated value is not null
+    • @Min              : Must be a number >= value
+    • @Max              : Must be a number <= value
+    • @Size             : Size must match the given size
+    • @Pattern          : Must match a regular expression pattern
+    • @Future / @Past   : Date must be in future or past of given date
+    • others …
+
+We use Hibernate Validator as it is fully compliant with "Java’s Standard Bean Validation API": http://www.hibernate.org/validator
