@@ -615,3 +615,10 @@ Validation Annotations
     • others …
 
 We use Hibernate Validator as it is fully compliant with "Java’s Standard Bean Validation API": http://www.hibernate.org/validator
+
+@InitBinder
+    • @InitBinder annotation works as a pre-processor
+    • It will pre-process each web request to our controller
+    • Method annotated with @InitBinder is executed
+    • We will use this to trim Strings - remove leading and trailing white space
+    • If String only has white spaces … trim it to null - validation problem resolution
