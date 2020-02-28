@@ -622,3 +622,13 @@ We use Hibernate Validator as it is fully compliant with "Java’s Standard Bean
     • Method annotated with @InitBinder is executed
     • We will use this to trim Strings - remove leading and trailing white space
     • If String only has white spaces … trim it to null - validation problem resolution
+
+****************************************************************************************************************************************************************************************************************************************************
+
+What is Hibernate?
+    • A framework for persisting / saving Java objects in a database
+
+Benefits of Hibernate
+    • Hibernate handles all of the low-level SQL
+    • Minimizes the amount of JDBC code you have to develop
+    • Hibernate provides the Object-to-Relational Mapping (ORM)
