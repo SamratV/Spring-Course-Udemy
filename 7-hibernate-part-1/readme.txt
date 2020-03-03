@@ -10,3 +10,5 @@ VERSIONS:
 	3) PrimaryKeyDemo & Student: Insert 3 objects into DB with a specific primary key generation strategy in place.
 	4) ReadStudentDemo & Student: Reading the last inserted Student object.
 	5) QueryStudentDemo & Student: Querying the DB of students.
+	6) UpdateStudentDemo & Student: Updating the DB of students.
+	7) DeleteStudentDemo & Student: Performing delete operation.
