@@ -699,3 +699,21 @@ Hibernate Query Language (HQL)
             session.getTransaction().commit();
         • Another way of deleting
             session.createQuery("delete from Student where id=2").executeUpdate();
+
+Advanced Mappings
+    • In the database, you most likely will have
+        • Multiple Tables
+        • Relationships between Tables
+    • Need to model this with Hibernate
+
+Advanced Mappings -  Types
+    • One-to-One
+    • One-to-Many, Many-to-One
+    • Many-to-Many
+
+Fetch Types: Eager vs Lazy Loading
+    • When we fetch / retrieve data, should we retrieve EVERYTHING?
+        • Eager will retrieve everything
+        • Lazy will retrieve on request
+
+Read the Hibernate PDFs from number 18 to 27 for deatils about entity lifecycle and advanced mappings.
