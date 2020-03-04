@@ -1,0 +1,23 @@
+package com.vs.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class TestJdbc {
+
+	public static void main(String[] args) {
+		String url = "jdbc:mysql://localhost:3306/hb-02-one-to-one-bi?useSSL=false";
+		String user = "hbstudent";
+		String pass = "hbstudent";
+		
+		try {
+			System.out.println("Connecting to DB.");
+			
+			Connection conn = DriverManager.getConnection(url, user, pass);
+			
+			System.out.println("Connection successful: " + conn);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
