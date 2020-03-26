@@ -717,3 +717,23 @@ Fetch Types: Eager vs Lazy Loading
         • Lazy will retrieve on request
 
 Read the Hibernate PDFs from number 18 to 27 for deatils about entity lifecycle and advanced mappings.
+
+****************************************************************************************************************************************************************************************************************************************************
+
+IMPORTANT: Read the PDFs in "PDFs part 4 - Spring MVC CRUD App" folder for understanding the CRUD app.
+
+Spring @Transactional:
+	• Spring provides an @Transactional annotation
+		• Automatically begins and ends a transaction for your Hibernate code
+		• No need for you to explicitly do the following in your code
+
+			// start a transaction
+			session.beginTransaction();
+
+			// DO YOUR HIBERNATE STUFF HERE
+			// ...
+			
+			// commit transaction
+			session.getTransaction().commit();
+
+	• This Spring magic happens behind the scenes
