@@ -732,8 +732,10 @@ Spring @Transactional:
 
 			// DO YOUR HIBERNATE STUFF HERE
 			// ...
-			
+
 			// commit transaction
 			session.getTransaction().commit();
 
 	• This Spring magic happens behind the scenes
+
+IMPORTANT: @GetMapping and @PostMapping.
