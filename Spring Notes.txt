@@ -739,3 +739,7 @@ Spring @Transactional:
 	• This Spring magic happens behind the scenes
 
 IMPORTANT: @GetMapping and @PostMapping.
+
+****************************************************************************************************************************************************************************************************************************************************
+
+IMPORTANT: Read the PDFs in "PDFs part 5 - Spring AOP" folder.
