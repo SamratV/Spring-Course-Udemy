@@ -745,3 +745,12 @@ IMPORTANT: @GetMapping and @PostMapping.
 IMPORTANT: Read the PDFs in "PDFs part 5 - Spring AOP" folder.
 
 IMPORTANT: Download AspectJ jars from this link - https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
+
+Access the Return Value:
+
+    @AfterReturning(pointcut="execution(* com.luv2code.aopdemo.dao.AccountDAO.findAccounts(..))", returning="result")
+    public void afterReturningFindAccountsAdvice(JoinPoint theJoinPoint, List<Account> result) {
+        // print out the results of the method call
+        // NOTE: {returning="result"} and {List<Account> result} have the same name "result". It's a must to have the same name.
+        System.out.println("\n=====>>> result is: " + result);
+    }
