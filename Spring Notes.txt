@@ -746,11 +746,56 @@ IMPORTANT: Read the PDFs in "PDFs part 5 - Spring AOP" folder.
 
 IMPORTANT: Download AspectJ jars from this link - https://mvnrepository.com/artifact/org.aspectj/aspectjweaver
 
-Access the Return Value:
+
+
+ACCESS THE RETURN VALUE:
 
     @AfterReturning(pointcut="execution(* com.luv2code.aopdemo.dao.AccountDAO.findAccounts(..))", returning="result")
     public void afterReturningFindAccountsAdvice(JoinPoint theJoinPoint, List<Account> result) {
         // print out the results of the method call
         // NOTE: {returning="result"} and {List<Account> result} have the same name "result". It's a must to have the same name.
         System.out.println("\n=====>>> result is: " + result);
+    }
+
+
+
+LOGGING / PRINTING TO THE SAME STREAM:
+    
+    package com.luv2code.aopdemo;
+
+    import java.util.logging.Logger;
+    import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+    import com.luv2code.aopdemo.service.TrafficFortuneService;
+
+    public class AroundWithLoggerDemoApp {
+
+        private static Logger myLogger = Logger.getLogger(getClass().getName());
+                
+        public static void main(String[] args) {
+
+            // read spring config java class
+            AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DemoConfig.class);
+            
+            // get the bean from spring container
+            TrafficFortuneService theFortuneService = context.getBean("trafficFortuneService", TrafficFortuneService.class);
+            
+            /*
+             * IMPORTANT:
+             *
+             * We use "myLogger.info()" instead of "System.out.println()".
+             *
+             */
+
+            myLogger.info("\nMain Program: AroundDemoApp");
+            myLogger.info("Calling getFortune");
+            
+            String data = theFortuneService.getFortune();
+            
+            myLogger.info("\nMy fortune is: " + data);
+            myLogger.info("Finished");
+            
+            // close the context
+            context.close();
+        }
+
     }
