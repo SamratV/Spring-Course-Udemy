@@ -815,4 +815,8 @@ SPRING SECURITY
     
     IMPORTANT: Read the PDFs while reading the source code of the spring security projects.
 
+    MISSING TOPICS:
+        1) Manual session & cookie management and access. (For "REMEMBER ME" feature.)
+        2) Manual database configuration. (To make use of user defined tables which have names other than the Spring Security default names.)
+
 ****************************************************************************************************************************************************************************************************************************************************
