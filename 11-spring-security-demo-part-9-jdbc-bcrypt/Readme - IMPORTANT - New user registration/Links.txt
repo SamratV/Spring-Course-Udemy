@@ -1,0 +1,5 @@
+Here are some rough notes on the Thymeleaf version:
+
+- For docs on Spring MVC and Thymeleaf integration, see this: https://www.thymeleaf.org/doc/tutorials/3.0/thymeleafspring.html
+
+- For docs on Spring Security and Thymeleaf integration, see this: https://www.thymeleaf.org/doc/articles/springsecurity.html
