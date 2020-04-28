@@ -1,0 +1,1 @@
+Changes were made to pom.xml and application.properties.
