@@ -832,5 +832,7 @@ SPRING BOOT
 -----------
     IMPORTANT: Spring Boot Starter details :- https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-starter
     IMPORTANT: Read PDFs thoroughly. Certain parts have been skipped.
+    VERY IMPORTANT: Spring Data JPA.
+    VERY IMPORTANT: Read the screenshots in "14-spring-boot-projects\8-spring-boot-demo-app-thymeleafdemo\Readme - IMPORTANT - Spring Data JPA Query Methods".
 
 ****************************************************************************************************************************************************************************************************************************************************
